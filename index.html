@@ -35,14 +35,13 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#programs">Programs</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#teachers">Teachers</a></li>
                 <li><a href="#success">Student Success</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#portal" class="btn btn-secondary btn-sm">Student Portal</a>
-                <a href="#contact" class="btn btn-primary btn-sm">Enroll Now</a>
+                <a href="https://wa.me/923254553040" class="btn btn-primary btn-sm">Enroll Now</a>
             </div>
             <button class="nav-burger" id="burgerBtn" aria-label="Open menu"><span></span></button>
         </div>
@@ -57,13 +56,12 @@
         <a href="#home">Home</a>
         <a href="#programs">Programs</a>
         <a href="#about">About Us</a>
-        <a href="#teachers">Teachers</a>
         <a href="#success">Student Success</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <div class="mp-ctas">
             <a href="#portal" class="btn btn-secondary">Student Portal</a>
-            <a href="#contact" class="btn btn-primary btn-sm" style="color: white;">Enroll Now</a>
+            <a href="https://wa.me/923254553040" class="btn btn-primary btn-sm" style="color: white;">Enroll Now</a>
         </div>
     </div>
 
@@ -78,7 +76,7 @@
                     who want results, not just lectures.</p>
                 <div class="hero-ctas">
                     <a href="#programs" class="btn btn-primary">Explore Programs</a>
-                    <a href="#contact" class="btn btn-secondary">Enroll Now</a>
+                    <a href="https://wa.me/923254553040" class="btn btn-secondary">Enroll Now</a>
                 </div>
                 <div class="hero-trust">
                     <div class="ht-item"><span class="ht-num">50+</span><span class="ht-label">Students
@@ -167,19 +165,6 @@
                 <h2>Four steps to your <span class="grad-text">next result</span></h2>
             </div>
             <div class="process-track" id="processTrack"></div>
-        </div>
-    </section>
-
-    <!-- ============================= TEACHERS ============================= -->
-    <section class="section" id="teachers" style="background:var(--surface);">
-        <div class="wrap">
-            <div class="section-head reveal">
-                <div class="eyebrow">Meet Our Teachers</div>
-                <h2>Learn from people who've <span class="grad-text">done the work</span></h2>
-                <p>Every instructor at ILMWALA HUB is selected for subject mastery and their ability to explain clearly,
-                    not just lecture.</p>
-            </div>
-            <div class="teachers-grid" id="teachersGrid"></div>
         </div>
     </section>
 
@@ -275,7 +260,7 @@
                         <div class="c-icon"><i class="fa-solid fa-location-dot" style="color: rgb(255, 255, 255);"></i>
                         </div>
                         <div>
-                            <h4>Office</h4>
+                            <h4>Location</h4>
                             <p>Online, WorldWide</p>
                         </div>
                     </div>
@@ -317,7 +302,6 @@
                 <h5>Quick Links</h5>
                 <ul class="footer-links">
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#teachers">Teachers</a></li>
                     <li><a href="#success">Student Success</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#portal">Student Portal</a></li>
@@ -481,15 +465,6 @@
             { title: "Track Progress", text: "Celebrate meaningful progress and success." }
         ];
 
-        const teachers = [
-            { name: "Sir Hamza Khalid", role: "Physics & Mathematics", exp: "9 yrs experience", bio: "Cambridge-trained educator known for breaking down complex numericals into simple, exam-ready steps.", initials: "HK", from: "#50207A", to: "#838CE5" },
-            { name: "Ms. Ayesha Noor", role: "Biology & Chemistry", exp: "7 yrs experience", bio: "Focuses on concept clarity and diagram-based learning for high-retention exam preparation.", initials: "AN", from: "#838CE5", to: "#D6B9FC" },
-            { name: "Ms. Sara Iqbal", role: "English & IELTS", exp: "8 yrs experience", bio: "IELTS-certified trainer specialising in writing technique and spoken fluency coaching.", initials: "SI", from: "#D6B9FC", to: "#50207A" },
-            { name: "Sir Bilal Ahmed", role: "Computer Science", exp: "6 yrs experience", bio: "Industry-experienced developer turned educator, teaching CS with real-world coding context.", initials: "BA", from: "#50207A", to: "#D6B9FC" },
-            { name: "Dr. Fatima Rehman", role: "A Level Chemistry", exp: "11 yrs experience", bio: "PhD holder with a track record of guiding A2 students to top-band exam performance.", initials: "FR", from: "#838CE5", to: "#50207A" },
-            { name: "Sir Usman Tariq", role: "Spoken English", exp: "5 yrs experience", bio: "Communication coach passionate about building fluency and interview-ready confidence.", initials: "UT", from: "#D6B9FC", to: "#838CE5" }
-        ];
-
         const testimonials = [
             { name: "Mina Fawad", program: "IGCSE Accounting", rating: 5, quote: "The weekly mock tests were the real game changer for me — by exam day, nothing felt unfamiliar. My grades went from a C to an A* in one term.", initials: "ZM", from: "#50207A", to: "#838CE5" },
             { name: "Moaz Sikander", program: "O-Level Pakistan Studies", rating: 5, quote: "I went from Band 5.5 to Band 7.5 in six weeks. The writing feedback alone was worth the entire course fee.", initials: "AR", from: "#838CE5", to: "#D6B9FC" },
@@ -601,18 +576,6 @@
       <div class="proc-num">${i + 1}</div>
       <h4>${s.title}</h4>
       <p>${s.text}</p>
-    </div>
-  `).join('');
-        }
-
-        function renderTeachers() {
-            document.getElementById('teachersGrid').innerHTML = teachers.map(t => `
-    <div class="t-card reveal">
-      <div class="t-avatar" style="background:linear-gradient(135deg,${t.from},${t.to});">${t.initials}</div>
-      <h4>${t.name}</h4>
-      <div class="t-role">${t.role}</div>
-      <p class="t-bio">${t.bio}</p>
-      <span class="t-exp">${t.exp}</span>
     </div>
   `).join('');
         }
@@ -848,7 +811,6 @@ ${message}`;
         renderPrograms();
         renderWhy();
         renderProcess();
-        renderTeachers();
         renderTestimonials();
         renderStats();
         renderFaq();
