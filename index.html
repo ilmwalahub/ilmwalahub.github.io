@@ -1,2489 +1,860 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ILMWALA HUB</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      width: 100%;
-    }
-
-    .page-wrapper {
-      min-height: 100%;
-      width: 100%;
-      overflow-auto;
-    }
-
-    .gradient-bg {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    }
-
-    .yellow-gradient {
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    }
-
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .timeline-line {
-      position: relative;
-    }
-
-    .timeline-line::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, #3b82f6 0%, #fbbf24 100%);
-      transform: translateX(-50%);
-    }
-
-    @media (max-width: 768px) {
-      .timeline-line::before {
-        left: 20px;
-      }
-    }
-
-    .pulse-animation {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.7;
-      }
-    }
-
-    .nav-link {
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #fbbf24;
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
-
-    .fade-in {
-      animation: fadeIn 0.6s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-  <style>
-    @view-transition {
-      navigation: auto;
-    }
-  </style>
-  <script src="./data_sdk.js.download" type="text/javascript"></script>
-  <style>
-    *,
-    ::before,
-    ::after {
-      --tw-border-spacing-x: 0;
-      --tw-border-spacing-y: 0;
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-rotate: 0;
-      --tw-skew-x: 0;
-      --tw-skew-y: 0;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-pan-x: ;
-      --tw-pan-y: ;
-      --tw-pinch-zoom: ;
-      --tw-scroll-snap-strictness: proximity;
-      --tw-gradient-from-position: ;
-      --tw-gradient-via-position: ;
-      --tw-gradient-to-position: ;
-      --tw-ordinal: ;
-      --tw-slashed-zero: ;
-      --tw-numeric-figure: ;
-      --tw-numeric-spacing: ;
-      --tw-numeric-fraction: ;
-      --tw-ring-inset: ;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-color: rgb(59 130 246 / 0.5);
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-colored: 0 0 #0000;
-      --tw-blur: ;
-      --tw-brightness: ;
-      --tw-contrast: ;
-      --tw-grayscale: ;
-      --tw-hue-rotate: ;
-      --tw-invert: ;
-      --tw-saturate: ;
-      --tw-sepia: ;
-      --tw-drop-shadow: ;
-      --tw-backdrop-blur: ;
-      --tw-backdrop-brightness: ;
-      --tw-backdrop-contrast: ;
-      --tw-backdrop-grayscale: ;
-      --tw-backdrop-hue-rotate: ;
-      --tw-backdrop-invert: ;
-      --tw-backdrop-opacity: ;
-      --tw-backdrop-saturate: ;
-      --tw-backdrop-sepia: ;
-      --tw-contain-size: ;
-      --tw-contain-layout: ;
-      --tw-contain-paint: ;
-      --tw-contain-style:
-    }
-
-    ::backdrop {
-      --tw-border-spacing-x: 0;
-      --tw-border-spacing-y: 0;
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-rotate: 0;
-      --tw-skew-x: 0;
-      --tw-skew-y: 0;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-pan-x: ;
-      --tw-pan-y: ;
-      --tw-pinch-zoom: ;
-      --tw-scroll-snap-strictness: proximity;
-      --tw-gradient-from-position: ;
-      --tw-gradient-via-position: ;
-      --tw-gradient-to-position: ;
-      --tw-ordinal: ;
-      --tw-slashed-zero: ;
-      --tw-numeric-figure: ;
-      --tw-numeric-spacing: ;
-      --tw-numeric-fraction: ;
-      --tw-ring-inset: ;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-color: rgb(59 130 246 / 0.5);
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-colored: 0 0 #0000;
-      --tw-blur: ;
-      --tw-brightness: ;
-      --tw-contrast: ;
-      --tw-grayscale: ;
-      --tw-hue-rotate: ;
-      --tw-invert: ;
-      --tw-saturate: ;
-      --tw-sepia: ;
-      --tw-drop-shadow: ;
-      --tw-backdrop-blur: ;
-      --tw-backdrop-brightness: ;
-      --tw-backdrop-contrast: ;
-      --tw-backdrop-grayscale: ;
-      --tw-backdrop-hue-rotate: ;
-      --tw-backdrop-invert: ;
-      --tw-backdrop-opacity: ;
-      --tw-backdrop-saturate: ;
-      --tw-backdrop-sepia: ;
-      --tw-contain-size: ;
-      --tw-contain-layout: ;
-      --tw-contain-paint: ;
-      --tw-contain-style:
-    }
-
-    /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
-    *,
-    ::after,
-    ::before {
-      box-sizing: border-box;
-      border-width: 0;
-      border-style: solid;
-      border-color: #e5e7eb
-    }
-
-    ::after,
-    ::before {
-      --tw-content: ''
-    }
-
-    :host,
-    html {
-      line-height: 1.5;
-      -webkit-text-size-adjust: 100%;
-      -moz-tab-size: 4;
-      tab-size: 4;
-      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      font-feature-settings: normal;
-      font-variation-settings: normal;
-      -webkit-tap-highlight-color: transparent
-    }
-
-    body {
-      margin: 0;
-      line-height: inherit
-    }
-
-    hr {
-      height: 0;
-      color: inherit;
-      border-top-width: 1px
-    }
-
-    abbr:where([title]) {
-      -webkit-text-decoration: underline dotted;
-      text-decoration: underline dotted
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: inherit;
-      font-weight: inherit
-    }
-
-    a {
-      color: inherit;
-      text-decoration: inherit
-    }
-
-    b,
-    strong {
-      font-weight: bolder
-    }
-
-    code,
-    kbd,
-    pre,
-    samp {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-feature-settings: normal;
-      font-variation-settings: normal;
-      font-size: 1em
-    }
-
-    small {
-      font-size: 80%
-    }
-
-    sub,
-    sup {
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-      vertical-align: baseline
-    }
-
-    sub {
-      bottom: -.25em
-    }
-
-    sup {
-      top: -.5em
-    }
-
-    table {
-      text-indent: 0;
-      border-color: inherit;
-      border-collapse: collapse
-    }
-
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: inherit;
-      font-feature-settings: inherit;
-      font-variation-settings: inherit;
-      font-size: 100%;
-      font-weight: inherit;
-      line-height: inherit;
-      letter-spacing: inherit;
-      color: inherit;
-      margin: 0;
-      padding: 0
-    }
-
-    button,
-    select {
-      text-transform: none
-    }
-
-    button,
-    input:where([type=button]),
-    input:where([type=reset]),
-    input:where([type=submit]) {
-      -webkit-appearance: button;
-      background-color: transparent;
-      background-image: none
-    }
-
-    :-moz-focusring {
-      outline: auto
-    }
-
-    :-moz-ui-invalid {
-      box-shadow: none
-    }
-
-    progress {
-      vertical-align: baseline
-    }
-
-    ::-webkit-inner-spin-button,
-    ::-webkit-outer-spin-button {
-      height: auto
-    }
-
-    [type=search] {
-      -webkit-appearance: textfield;
-      outline-offset: -2px
-    }
-
-    ::-webkit-search-decoration {
-      -webkit-appearance: none
-    }
-
-    ::-webkit-file-upload-button {
-      -webkit-appearance: button;
-      font: inherit
-    }
-
-    summary {
-      display: list-item
-    }
-
-    blockquote,
-    dd,
-    dl,
-    figure,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    hr,
-    p,
-    pre {
-      margin: 0
-    }
-
-    fieldset {
-      margin: 0;
-      padding: 0
-    }
-
-    legend {
-      padding: 0
-    }
-
-    menu,
-    ol,
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0
-    }
-
-    dialog {
-      padding: 0
-    }
-
-    textarea {
-      resize: vertical
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      opacity: 1;
-      color: #9ca3af
-    }
-
-    [role=button],
-    button {
-      cursor: pointer
-    }
-
-    :disabled {
-      cursor: default
-    }
-
-    audio,
-    canvas,
-    embed,
-    iframe,
-    img,
-    object,
-    svg,
-    video {
-      display: block;
-      vertical-align: middle
-    }
-
-    img,
-    video {
-      max-width: 100%;
-      height: auto
-    }
-
-    [hidden]:where(:not([hidden=until-found])) {
-      display: none
-    }
-
-    .absolute {
-      position: absolute
-    }
-
-    .relative {
-      position: relative
-    }
-
-    .sticky {
-      position: sticky
-    }
-
-    .left-1\/2 {
-      left: 50%
-    }
-
-    .top-0 {
-      top: 0px
-    }
-
-    .z-50 {
-      z-index: 50
-    }
-
-    .mx-auto {
-      margin-left: auto;
-      margin-right: auto
-    }
-
-    .mb-1 {
-      margin-bottom: 0.25rem
-    }
-
-    .mb-12 {
-      margin-bottom: 3rem
-    }
-
-    .mb-16 {
-      margin-bottom: 4rem
-    }
-
-    .mb-2 {
-      margin-bottom: 0.5rem
-    }
-
-    .mb-3 {
-      margin-bottom: 0.75rem
-    }
-
-    .mb-4 {
-      margin-bottom: 1rem
-    }
-
-    .mb-6 {
-      margin-bottom: 1.5rem
-    }
-
-    .mb-8 {
-      margin-bottom: 2rem
-    }
-
-    .mr-2 {
-      margin-right: 0.5rem
-    }
-
-    .mr-3 {
-      margin-right: 0.75rem
-    }
-
-    .mr-4 {
-      margin-right: 1rem
-    }
-
-    .mt-0\.5 {
-      margin-top: 0.125rem
-    }
-
-    .mt-8 {
-      margin-top: 2rem
-    }
-
-    .block {
-      display: block
-    }
-
-    .inline-block {
-      display: inline-block
-    }
-
-    .flex {
-      display: flex
-    }
-
-    .grid {
-      display: grid
-    }
-
-    .hidden {
-      display: none
-    }
-
-    .h-10 {
-      height: 2.5rem
-    }
-
-    .h-12 {
-      height: 3rem
-    }
-
-    .h-16 {
-      height: 4rem
-    }
-
-    .h-32 {
-      height: 8rem
-    }
-
-    .h-5 {
-      height: 1.25rem
-    }
-
-    .h-6 {
-      height: 1.5rem
-    }
-
-    .h-8 {
-      height: 2rem
-    }
-
-    .h-full {
-      height: 100%
-    }
-
-    .w-10 {
-      width: 2.5rem
-    }
-
-    .w-12 {
-      width: 3rem
-    }
-
-    .w-16 {
-      width: 4rem
-    }
-
-    .w-32 {
-      width: 8rem
-    }
-
-    .w-5 {
-      width: 1.25rem
-    }
-
-    .w-6 {
-      width: 1.5rem
-    }
-
-    .w-8 {
-      width: 2rem
-    }
-
-    .w-full {
-      width: 100%
-    }
-
-    .max-w-4xl {
-      max-width: 56rem
-    }
-
-    .max-w-6xl {
-      max-width: 72rem
-    }
-
-    .max-w-7xl {
-      max-width: 80rem
-    }
-
-    .flex-shrink-0 {
-      flex-shrink: 0
-    }
-
-    .-translate-x-1\/2 {
-      --tw-translate-x: -50%;
-      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-
-    .transform {
-      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
-    }
-
-    .resize-none {
-      resize: none
-    }
-
-    .grid-cols-1 {
-      grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
-
-    .items-start {
-      align-items: flex-start
-    }
-
-    .items-center {
-      align-items: center
-    }
-
-    .justify-center {
-      justify-content: center
-    }
-
-    .justify-between {
-      justify-content: space-between
-    }
-
-    .gap-6 {
-      gap: 1.5rem
-    }
-
-    .gap-8 {
-      gap: 2rem
-    }
-
-    .gap-12 {
-      gap: 3rem
-    }
-
-    .space-x-2> :not([hidden])~ :not([hidden]) {
-      --tw-space-x-reverse: 0;
-      margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-      margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))
-    }
-
-    .space-x-8> :not([hidden])~ :not([hidden]) {
-      --tw-space-x-reverse: 0;
-      margin-right: calc(2rem * var(--tw-space-x-reverse));
-      margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
-    }
-
-    .space-y-2> :not([hidden])~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse))
-    }
-
-    .space-y-4> :not([hidden])~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(1rem * var(--tw-space-y-reverse))
-    }
-
-    .space-y-6> :not([hidden])~ :not([hidden]) {
-      --tw-space-y-reverse: 0;
-      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
-    }
-
-    .overflow-hidden {
-      overflow: hidden
-    }
-
-    .rounded-2xl {
-      border-radius: 1rem
-    }
-
-    .rounded-full {
-      border-radius: 9999px
-    }
-
-    .rounded-md {
-      border-radius: 0.375rem
-    }
-
-    .rounded-xl {
-      border-radius: 0.75rem
-    }
-
-    .rounded-lg {
-      border-radius: 0.5rem
-    }
-
-    .border-2 {
-      border-width: 2px
-    }
-
-    .border-t {
-      border-top-width: 1px
-    }
-
-    .border-white\/20 {
-      border-color: rgb(255 255 255 / 0.2)
-    }
-
-    .bg-white {
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
-    }
-
-    .p-2 {
-      padding: 0.5rem
-    }
-
-    .p-6 {
-      padding: 1.5rem
-    }
-
-    .p-8 {
-      padding: 2rem
-    }
-
-    .p-4 {
-      padding: 1rem
-    }
-
-    .px-3 {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem
-    }
-
-    .px-4 {
-      padding-left: 1rem;
-      padding-right: 1rem
-    }
-
-    .px-8 {
-      padding-left: 2rem;
-      padding-right: 2rem
-    }
-
-    .py-1 {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem
-    }
-
-    .py-12 {
-      padding-top: 3rem;
-      padding-bottom: 3rem
-    }
-
-    .py-16 {
-      padding-top: 4rem;
-      padding-bottom: 4rem
-    }
-
-    .py-2 {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem
-    }
-
-    .py-20 {
-      padding-top: 5rem;
-      padding-bottom: 5rem
-    }
-
-    .py-4 {
-      padding-top: 1rem;
-      padding-bottom: 1rem
-    }
-
-    .py-8 {
-      padding-top: 2rem;
-      padding-bottom: 2rem
-    }
-
-    .px-6 {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem
-    }
-
-    .py-3 {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem
-    }
-
-    .pb-4 {
-      padding-bottom: 1rem
-    }
-
-    .pt-8 {
-      padding-top: 2rem
-    }
-
-    .pb-6 {
-      padding-bottom: 1.5rem
-    }
-
-    .text-left {
-      text-align: left
-    }
-
-    .text-center {
-      text-align: center
-    }
-
-    .text-2xl {
-      font-size: 1.5rem;
-      line-height: 2rem
-    }
-
-    .text-3xl {
-      font-size: 1.875rem;
-      line-height: 2.25rem
-    }
-
-    .text-4xl {
-      font-size: 2.25rem;
-      line-height: 2.5rem
-    }
-
-    .text-lg {
-      font-size: 1.125rem;
-      line-height: 1.75rem
-    }
-
-    .text-sm {
-      font-size: 0.875rem;
-      line-height: 1.25rem
-    }
-
-    .text-xl {
-      font-size: 1.25rem;
-      line-height: 1.75rem
-    }
-
-    .font-bold {
-      font-weight: 700
-    }
-
-    .font-medium {
-      font-weight: 500
-    }
-
-    .font-semibold {
-      font-weight: 600
-    }
-
-    .leading-relaxed {
-      line-height: 1.625
-    }
-
-    .text-white {
-      --tw-text-opacity: 1;
-      color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-    }
-
-    .opacity-75 {
-      opacity: 0.75
-    }
-
-    .opacity-90 {
-      opacity: 0.9
-    }
-
-    .shadow-lg {
-      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-    }
-
-    .shadow-md {
-      --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-    }
-
-    .transition-all {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms
-    }
-
-    .transition-colors {
-      transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
-      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms
-    }
-
-    .transition-transform {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms
-    }
-
-    .hover\:underline:hover {
-      -webkit-text-decoration-line: underline;
-      text-decoration-line: underline
-    }
-
-    .hover\:shadow-xl:hover {
-      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-    }
-
-    .focus\:border-blue-500:focus {
-      --tw-border-opacity: 1;
-      border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
-    }
-
-    .focus\:outline-none:focus {
-      outline: 2px solid transparent;
-      outline-offset: 2px
-    }
-
-    @media (min-width: 640px) {
-      .sm\:px-6 {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem
-      }
-    }
-
-    @media (min-width: 768px) {
-      .md\:mb-0 {
-        margin-bottom: 0px
-      }
-
-      .md\:block {
-        display: block
-      }
-
-      .md\:flex {
-        display: flex
-      }
-
-      .md\:hidden {
-        display: none
-      }
-
-      .md\:w-1\/2 {
-        width: 50%
-      }
-
-      .md\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .md\:grid-cols-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr))
-      }
-
-      .md\:grid-cols-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr))
-      }
-
-      .md\:items-center {
-        align-items: center
-      }
-
-      .md\:justify-start {
-        justify-content: flex-start
-      }
-
-      .md\:justify-end {
-        justify-content: flex-end
-      }
-
-      .md\:p-12 {
-        padding: 3rem
-      }
-
-      .md\:pl-12 {
-        padding-left: 3rem
-      }
-
-      .md\:pr-12 {
-        padding-right: 3rem
-      }
-
-      .md\:text-right {
-        text-align: right
-      }
-
-      .md\:text-2xl {
-        font-size: 1.5rem;
-        line-height: 2rem
-      }
-
-      .md\:text-4xl {
-        font-size: 2.25rem;
-        line-height: 2.5rem
-      }
-
-      .md\:text-5xl {
-        font-size: 3rem;
-        line-height: 1
-      }
-
-      .md\:text-6xl {
-        font-size: 3.75rem;
-        line-height: 1
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .lg\:grid-cols-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr))
-      }
-
-      .lg\:grid-cols-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr))
-      }
-
-      .lg\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .lg\:px-8 {
-        padding-left: 2rem;
-        padding-right: 2rem
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILMWALA HUB — Your journey to success starts here.</title>
+    <meta name="description"
+        content="ILMWALA HUB is an online learning platform offering expert-led programs including IGCSE/O Levels, IELTS Preparation, and Spoken English Courses with live classes, recorded lectures, assessments and personalised support.">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ILMWALA HUB" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/main.css">
+    <script src="https://kit.fontawesome.com/0a710640f4.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="h-full" style="font-family: system-ui, system-ui, -apple-system, sans-serif; font-size: 16px;">
-  <div class="page-wrapper"><!-- Navigation -->
-    <nav class="sticky top-0 z-50 shadow-md" style="background-color: #ffffff;">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center space-x-2">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
-              <img src="logo.png" alt="Ilmwala Hub Logo" class="w-full h-full object-contain" />
+<body>
+
+    <!-- ============================= NAV ============================= -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#home" class="brand">
+                <img src="/public/images/logo.png" alt="ILMWALA HUB Logo" class="brand-logo">
+                <span>ILMWALA HUB</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#success">Student Success</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#portal" class="btn btn-secondary btn-sm">Student Portal</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Enroll Now</a>
             </div>
-            <span class="text-xl font-bold" style="color: #1e40af;" id="nav-title">ILMWALA HUB</span>
-          </div><!-- Desktop Menu -->
-          <div class="hidden md:flex space-x-8"><a href="index.html#home" class="nav-link font-medium active"
-              style="color: #1e40af;" data-page="home">Home</a> <a href="index.html#about" class="nav-link font-medium"
-              style="color: #1e40af;" data-page="about">About</a> <a href="index.html#courses"
-              class="nav-link font-medium" style="color: #1e40af;" data-page="courses">Courses</a> <a
-              href="index.html#contact" class="nav-link font-medium" style="color: #1e40af;"
-              data-page="contact">Contact</a>
-          </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md"
-            style="color: #1e40af;">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg></button>
-        </div><!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden pb-4"><a href="index.html#home" class="block py-2 font-medium"
-            style="color: #1e40af;" data-page="home">Home</a> <a href="index.html#about" class="block py-2 font-medium"
-            style="color: #1e40af;" data-page="about">About</a> <a href="index.html#courses"
-            class="block py-2 font-medium" style="color: #1e40af;" data-page="courses">Courses</a> <a
-            href="index.html#contact" class="block py-2 font-medium" style="color: #1e40af;"
-            data-page="contact">Contact</a>
+            <button class="nav-burger" id="burgerBtn" aria-label="Open menu"><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-panel" id="mobilePanel">
+        <div class="mp-head">
+            <a href="#home" class="brand"><img src="/public/images/logo.png" alt="ILMWALA HUB Logo"
+                    class="brand-logo">ILMWALA HUB</a>
+            <button class="mp-close" id="mpClose" aria-label="Close menu">✕</button>
+        </div>
+        <a href="#home">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#about">About Us</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#success">Student Success</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <div class="mp-ctas">
+            <a href="#portal" class="btn btn-secondary">Student Portal</a>
+            <a href="#contact" class="btn btn-primary btn-sm" style="color: white;">Enroll Now</a>
+        </div>
+    </div>
+
+    <!-- ============================= HERO ============================= -->
+    <header class="hero" id="home">
+        <div class="wrap hero-grid">
+            <div>
+                <div class="eyebrow">🎓 Trusted by students across Pakistan</div>
+                <h1>Your Journey To Success <span class="grad-text">Starts Here.</span></h1>
+                <p class="hero-sub">ILMWALA HUB delivers expert-led online education through live classes, recorded
+                    lectures, structured assessments, assignments and personalised academic support — built for students
+                    who want results, not just lectures.</p>
+                <div class="hero-ctas">
+                    <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                    <a href="#contact" class="btn btn-secondary">Enroll Now</a>
+                </div>
+                <div class="hero-trust">
+                    <div class="ht-item"><span class="ht-num">50+</span><span class="ht-label">Students
+                            Enrolled</span></div>
+                    <div class="ht-item"><span class="ht-num">30+</span><span class="ht-label">Expert Teachers</span>
+                    </div>
+                    <div class="ht-item"><span class="ht-num">4.8/5</span><span class="ht-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <svg class="hero-illustration" viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gBlob" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#D6B9FC" />
+                            <stop offset="100%" stop-color="#838CE5" />
+                        </linearGradient>
+                        <linearGradient id="gScreen" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#50207A" />
+                            <stop offset="100%" stop-color="#6b2f9e" />
+                        </linearGradient>
+                        <linearGradient id="gCard" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#838CE5" />
+                            <stop offset="100%" stop-color="#50207A" />
+                        </linearGradient>
+                    </defs>
+                    <ellipse cx="260" cy="240" rx="230" ry="210" fill="url(#gBlob)" opacity="0.28" />
+                    <!-- laptop -->
+                    <rect x="120" y="130" width="280" height="180" rx="18" fill="url(#gScreen)" />
+                    <rect x="140" y="150" width="240" height="140" rx="8" fill="#fff" opacity="0.08" />
+                    <rect x="150" y="162" width="90" height="10" rx="5" fill="#D6B9FC" />
+                    <rect x="150" y="182" width="150" height="8" rx="4" fill="#ffffff" opacity="0.5" />
+                    <rect x="150" y="198" width="120" height="8" rx="4" fill="#ffffff" opacity="0.35" />
+                    <circle cx="320" cy="240" r="34" fill="#D6B9FC" opacity="0.9" />
+                    <path d="M310 224 L340 240 L310 256 Z" fill="#50207A" />
+                    <rect x="95" y="310" width="330" height="18" rx="9" fill="url(#gScreen)" />
+                    <rect x="70" y="322" width="380" height="10" rx="5" fill="#3a1759" opacity="0.5" />
+                    <!-- student figure -->
+                    <circle cx="180" cy="365" r="22" fill="#F5B942" />
+                    <rect x="150" y="388" width="60" height="46" rx="16" fill="#50207A" />
+                    <!-- floating shapes -->
+                    <circle cx="430" cy="120" r="10" fill="#838CE5" />
+                    <circle cx="70" cy="90" r="7" fill="#D6B9FC" />
+                    <rect x="410" y="330" width="26" height="26" rx="8" fill="#838CE5" opacity="0.8" />
+                    <path d="M60 220 l14 14 -14 14 -14 -14 z" fill="#D6B9FC" />
+                </svg>
+                <div class="float-card float-1"><span class="fc-dot">▶</span> Live Class Now</div>
+                <div class="float-card float-2"><span class="fc-dot">✓</span> Test Completed</div>
+                <div class="float-card float-3"><span class="fc-dot">★</span> 4.8 Rating</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================= PROGRAMS ============================= -->
+    <section class="section" id="programs">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Our Programs</div>
+                <h2>Find the program built for <span class="grad-text">your goal</span></h2>
+                <p>Every program is thoughtfully designed with the learning format that suits it best—whether through
+                    live classes, recorded lessons, assignments, progress tracking, or a combination of these—tailored
+                    to your stage of the academic journey.</p>
+            </div>
+            <div class="programs-grid" id="programsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================= WHY CHOOSE ============================= -->
+    <section class="section" id="about" style="background:var(--surface);">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Why ILMWALA HUB</div>
+                <h2>Learning designed to <span class="grad-text">actually work</span></h2>
+                <p>We combine structured teaching with real accountability — so progress isn't a promise, it's a tracked
+                    outcome.</p>
+            </div>
+            <div class="why-grid" id="whyGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================= PROCESS ============================= -->
+    <section class="section process">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">How It Works</div>
+                <h2>Four steps to your <span class="grad-text">next result</span></h2>
+            </div>
+            <div class="process-track" id="processTrack"></div>
+        </div>
+    </section>
+
+    <!-- ============================= TEACHERS ============================= -->
+    <section class="section" id="teachers" style="background:var(--surface);">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Meet Our Teachers</div>
+                <h2>Learn from people who've <span class="grad-text">done the work</span></h2>
+                <p>Every instructor at ILMWALA HUB is selected for subject mastery and their ability to explain clearly,
+                    not just lecture.</p>
+            </div>
+            <div class="teachers-grid" id="teachersGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================= TESTIMONIALS ============================= -->
+    <section class="section" id="success">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Student Voices</div>
+                <h2>Real students. <span class="grad-text">Real results.</span></h2>
+            </div>
+            <div class="testi-wrap reveal">
+                <button class="testi-arrow testi-prev" id="testiPrev" aria-label="Previous testimonial">←</button>
+                <button class="testi-arrow testi-next" id="testiNext" aria-label="Next testimonial">→</button>
+                <div class="testi-track">
+                    <div class="testi-slides" id="testiSlides"></div>
+                </div>
+                <div class="testi-nav" id="testiDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= STATS ============================= -->
+    <section class="section stats-section">
+        <div class="wrap">
+            <div class="stats-grid" id="statsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ============================= FAQ ============================= -->
+    <section class="section" id="faq">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">FAQ</div>
+                <h2>Questions, <span class="grad-text">answered</span></h2>
+            </div>
+            <div class="faq-list" id="faqList"></div>
+        </div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section class="section" id="contact" style="background:var(--surface);">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Contact Us</div>
+                <h2>Let's talk about <span class="grad-text">your next step</span></h2>
+                <p>Have a question about a program, fees, or scheduling? Reach out — we usually reply within a few
+                    hours.</p>
+            </div>
+            <div class="contact-grid">
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="f-row">
+                        <div class="f-field"><label for="cf-name">Full name</label><input id="cf-name" type="text"
+                                placeholder="Your name" required></div>
+                        <div class="f-field"><label for="cf-phone">Phone / WhatsApp</label><input id="cf-phone"
+                                type="tel" placeholder="03xx-xxxxxxx" required></div>
+                    </div>
+                    <div class="f-field"><label for="cf-email">Email address</label><input id="cf-email" type="email"
+                            placeholder="you@example.com" required></div>
+                    <div class="f-field"><label for="cf-program">Program of interest</label>
+                        <select id="cf-program">
+                            <option>IGCSE / O Levels</option>
+                            <option>IELTS Preparation</option>
+                            <option>Spoken English Course</option>
+                            <option>Not sure yet</option>
+                        </select>
+                    </div>
+                    <div class="f-field"><label for="cf-msg">Message</label><textarea id="cf-msg" rows="4"
+                            placeholder="Tell us what you're looking for..."></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">
+                        Send on Whatsapp
+                    </button>
+                    <p id="cfMsg"
+                        style="margin-top:12px;font-size:13px;font-weight:600;color:var(--success);min-height:16px;">
+                    </p>
+                </form>
+                <div class="contact-info reveal">
+                    <div class="c-item">
+                        <div class="c-icon"><i class="fa-regular fa-envelope" style="color: rgb(255, 255, 255);"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4><a href="mailto:hello@ilmwalahub.com">hello@ilmwalahub.com</a>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon"><i class="fa-brands fa-whatsapp" style="color: rgb(255, 255, 255);"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4><a href="https://wa.me/923254553040" target="_blank" rel="noopener">+92 325
+                                4553040</a>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon"><i class="fa-solid fa-location-dot" style="color: rgb(255, 255, 255);"></i>
+                        </div>
+                        <div>
+                            <h4>Office</h4>
+                            <p>Online, WorldWide</p>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-icon"><i class="fa-solid fa-link" style="color: rgb(255, 255, 255);"></i></div>
+                        <div>
+                            <h4>Follow Us</h4>
+                            <div class="social-row">
+                                <a href="https://www.instagram.com/ilmwalahub" aria-label="Instagram"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/974225219098723?ref=PROFILE_EDIT_xav_ig_profile_page_web"
+                                    aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.tiktok.com/@ilmwalahub" aria-label="TikTok"><i
+                                        class="fa-brands fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer>
+        <div class="wrap footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="brand" style="color:#fff;"><img src="/public/images/logo.png"
+                        alt="ILMWALA HUB Logo" class="brand-logo">ILMWALA HUB</a>
+                <p>Online education platform delivering expert-led programs for Cambridge, English proficiency and
+                    beyond — through live classes, recordings, and real academic support.</p>
+                <p style="margin-top:14px;font-family:var(--font-display);font-weight:600;color:#D6B9FC;">Your journey
+                    to success starts here.</p>
+            </div>
+            <div>
+                <h5>Programs</h5>
+                <ul class="footer-links" id="footerPrograms"></ul>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#teachers">Teachers</a></li>
+                    <li><a href="#success">Student Success</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#portal">Student Portal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@ilmwalahub.com">hello@ilmwalahub.com</a></li>
+                    <li><a href="https://wa.me/923254553040">+92 325 4553040</a></li>
+                    <li><a href="https://www.instagram.com/ilmwalahub">Instagram</a></li>
+                    <li><a
+                            href="https://www.facebook.com/974225219098723?ref=PROFILE_EDIT_xav_ig_profile_page_web">Facebook</a>
+                    </li>
+                    <li><a href="https://www.tiktok.com/@ilmwalahub">Tiktok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap footer-bottom">
+            <span>© <span id="year"></span> ILMWALA HUB. All rights reserved.</span>
+            <span><a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a
+                    href="/terms-and-conditions.html">Terms &amp; Conditions</a></span>
+        </div>
+    </footer>
+
+    <!-- ============================= PROGRAM DETAIL MODAL ============================= -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card" id="modalCard"></div>
+    </div>
+
+    <script>
+        /* ============================================================
+           ILMWALA HUB — CONTENT CONFIG
+           ------------------------------------------------------------
+           This is the single source of truth for all dynamic content.
+           To add, edit, or remove a PROGRAM from an admin panel later,
+           simply push/edit/remove an object in the `programs` array
+           below (or fetch this same shape from an API). Every card,
+           the footer list, and the full detail modal are generated
+           automatically from this data — no layout/template changes
+           are ever required.
+           ============================================================ */
+
+        const programs = [
+            {
+                id: "igcse-olevels",
+                title: "IGCSE / O Levels",
+                badge: "Most Popular",
+                thumbGradientFrom: "#50207A",
+                thumbGradientTo: "#838CE5",
+                shortDesc: "Subject-wise crash courses aligned to the Cambridge syllabus, built for exam-focused results.",
+                duration: "2 months",
+                suitedFor: "October/November",
+                price: "From PKR 12,000 / subject (monthly)",
+                mode: "Live + Recorded (Hybrid)",
+                schedule: "3 live sessions/week, 90 mins each, evenings",
+                overview: "Our IGCSE / O Level program breaks each subject into a focused crash course, mapped directly to the Cambridge syllabus and past-paper patterns. Students get live teaching, structured notes, assignments and full-length mock exams — everything needed to walk into the exam hall prepared.",
+                subjects: ["Physics", "Chemistry", "Biology", "Mathematics", "English Language", "Business Studies", "Economics", "Accounting", "Computer Science", "Pakistan Studies", "Islamiyat", "Add Maths"],
+                instructors: ["Sir Yahya Aamir", "Sir Hamza Riaz", "Ms. Anum Malik"],
+                prerequisites: "Students registered for the Cambridge IGCSE / O Level October/November examination session, including school and private candidates.",
+                outcomes: [
+                    "Complete syllabus revision with exam-focused teaching",
+                    "Confident, timed exam technique through tests & mocks",
+                    "Access to a growing bank of past papers with model answers",
+                    "Direct doubt-clearing support from subject teachers"
+                ],
+                faqs: [
+                    { q: "Can I join for a single subject only?", a: "Yes — every subject is sold and taught as its own independent crash course, so you only pay for what you need." },
+                    { q: "Are classes recorded if I miss one?", a: "Live sessions are recorded and available for the full duration of the course." }
+                ]
+            },
+            {
+                id: "ielts-prep",
+                title: "IELTS Preparation",
+                badge: "High Demand",
+                thumbGradientFrom: "#838CE5",
+                thumbGradientTo: "#D6B9FC",
+                shortDesc: "Focused training across all four IELTS modules with weekly mock tests and personalised band feedback.",
+                duration: "2 - 3 months",
+                suitedFor: "Ages 16+, all levels",
+                price: "PKR 30,000 (full course)",
+                mode: "Live + Recorded (Hybrid)",
+                schedule: "4 live sessions/week, 60 mins each",
+                overview: "A results-driven IELTS program covering Listening, Reading, Writing and Speaking with strategy-first teaching. Students sit weekly mock tests under real exam conditions and receive one-on-one feedback on writing tasks and speaking recordings to track band-score improvement.",
+                subjects: ["Listening Strategy", "Reading Techniques", "Writing Task 1 & 2", "Speaking Fluency & Coherence", "Grammar Foundations"],
+                instructors: ["Ms. Anum Malik"],
+                prerequisites: "No prior IELTS experience required. Intermediate English comprehension recommended.",
+                outcomes: [
+                    "Master all four IELTS skills: Listening, Reading, Writing, Speaking",
+                    "Understand the scoring criteria for Writing Taks 1 & 2",
+                    "Apply proven strategies for IELTS Reading question types",
+                    "Build the vocabulary range required for a high band score",
+                    "Prepare for the Speaking test with structured practice and feedback",
+                    "Complete full mock tests under real exam conditions"
+                ],
+                faqs: [
+                    { q: "What band score can I expect?", a: "Your final band score depends on your current English proficiency, attendance, and consistent practice. Our instructors provide personalized guidance to help you achieve your target score." },
+                    { q: "How can I enroll in the IELTS program?", a: "Simply contact us on WhatsApp to register. Our team will guide you through the enrollment process, batch selection, and fee payment." }
+                ]
+            },
+            {
+                id: "spoken-english",
+                title: "Spoken English Course",
+                badge: "Beginner Friendly",
+                thumbGradientFrom: "#D6B9FC",
+                thumbGradientTo: "#50207A",
+                shortDesc: "Build real-world fluency, confidence and workplace-ready communication skills from scratch.",
+                duration: "4 weeks",
+                suitedFor: "Available at all levels",
+                price: "PKR 5,000 (full course)",
+                mode: "Live + Recorded (Hybrid)",
+                schedule: "3 live sessions/week, 60 mins each",
+                overview: "A practical spoken-English program focused on everyday conversation, workplace communication and interview confidence — not grammar theory. Small live-practice groups ensure every student gets real speaking time each session.",
+                subjects: ["Elementary (A1 -A2)", "Pre-Intermediate (B1)", "Intermediate (B1-B2)", "Upper Intermediate (B2)"],
+                instructors: ["Ms. Anum Malik"],
+                prerequisites: "None — open to complete beginners.",
+                outcomes: [
+                    "Build practical vocabulary for real-world situations",
+                    "Master essential grammar structures clearly and confidently",
+                    "Write emails, messages, and short texts with clarity and accuracy",
+                    "Develop listening skills through authentic audio content",
+                    "Communicate with greater fluency and confidence",
+                    "Understand and use natural, everyday English expressions"
+                ],
+                faqs: [
+                    { q: "Is this suitable for absolute beginners?", a: "Yes, the course is structured to start from foundational confidence-building before moving into more advanced conversation practice." }
+                ]
+            }
+        ];
+
+        const whyItems = [
+            {
+                icon: '<i class="fa-solid fa-video"></i>',
+                title: "Live Interactive Classes",
+                text: "Real-time learning with expert educators."
+            },
+            {
+                icon: '<i class="fa-solid fa-circle-play"></i>',
+                title: "Recorded Lessons",
+                text: "Every session is recorded so you never miss a class."
+            },
+            {
+                icon: '<i class="fa-solid fa-chalkboard-user"></i>',
+                title: "Experienced Teachers",
+                text: "Subject specialists selected for expertise and clarity."
+            },
+            {
+                icon: '<i class="fa-solid fa-file-pen"></i>',
+                title: "Regular Assessments",
+                text: "Regular testing keeps preparation on track."
+            },
+            { icon: '<i class="fa-solid fa-book"></i>', title: "Homework & Practice", text: "Structured practice material after every single class." },
+            { icon: '<i class="fa-solid fa-comments"></i>', title: "Doubt Support", text: "Helpful answers when you need them most." },
+            { icon: '<i class="fa-solid fa-credit-card"></i>', title: "Affordable Fees", text: "High-quality education at competitive prices with transparent fee structures." }
+        ];
+
+        const processSteps = [
+            { title: "Choose Your Program", text: "Find the path that fits your current goals." },
+            { title: "Register", text: "Our team helps make enrollment simple." },
+            { title: "Attend Live Classes", text: "Learn, ask, practise, and connect weekly." },
+            { title: "Track Progress", text: "Celebrate meaningful progress and success." }
+        ];
+
+        const teachers = [
+            { name: "Sir Hamza Khalid", role: "Physics & Mathematics", exp: "9 yrs experience", bio: "Cambridge-trained educator known for breaking down complex numericals into simple, exam-ready steps.", initials: "HK", from: "#50207A", to: "#838CE5" },
+            { name: "Ms. Ayesha Noor", role: "Biology & Chemistry", exp: "7 yrs experience", bio: "Focuses on concept clarity and diagram-based learning for high-retention exam preparation.", initials: "AN", from: "#838CE5", to: "#D6B9FC" },
+            { name: "Ms. Sara Iqbal", role: "English & IELTS", exp: "8 yrs experience", bio: "IELTS-certified trainer specialising in writing technique and spoken fluency coaching.", initials: "SI", from: "#D6B9FC", to: "#50207A" },
+            { name: "Sir Bilal Ahmed", role: "Computer Science", exp: "6 yrs experience", bio: "Industry-experienced developer turned educator, teaching CS with real-world coding context.", initials: "BA", from: "#50207A", to: "#D6B9FC" },
+            { name: "Dr. Fatima Rehman", role: "A Level Chemistry", exp: "11 yrs experience", bio: "PhD holder with a track record of guiding A2 students to top-band exam performance.", initials: "FR", from: "#838CE5", to: "#50207A" },
+            { name: "Sir Usman Tariq", role: "Spoken English", exp: "5 yrs experience", bio: "Communication coach passionate about building fluency and interview-ready confidence.", initials: "UT", from: "#D6B9FC", to: "#838CE5" }
+        ];
+
+        const testimonials = [
+            { name: "Mina Fawad", program: "IGCSE Accounting", rating: 5, quote: "The weekly mock tests were the real game changer for me — by exam day, nothing felt unfamiliar. My grades went from a C to an A* in one term.", initials: "ZM", from: "#50207A", to: "#838CE5" },
+            { name: "Moaz Sikander", program: "O-Level Pakistan Studies", rating: 5, quote: "I went from Band 5.5 to Band 7.5 in six weeks. The writing feedback alone was worth the entire course fee.", initials: "AR", from: "#838CE5", to: "#D6B9FC" },
+            { name: "Moaz Laal", program: "IELTS Preparation", rating: 4, quote: "Teachers actually responded to doubts outside class hours, which never happened at my old tuition academy.", initials: "HF", from: "#D6B9FC", to: "#50207A" },
+            { name: "Bilal Sheikh", program: "Spoken English Course", rating: 5, quote: "I used to freeze in interviews. After four weeks of practice sessions here, I landed my first job offer.", initials: "BS", from: "#50207A", to: "#D6B9FC" }
+        ];
+
+        const stats = [
+            { num: "50+", label: "Students Enrolled" },
+            { num: "4", label: "Programs Offered" },
+            { num: "40+", label: "Expert Teachers" },
+            { num: "96%", label: "Student Satisfaction" },
+            { num: "1000+", label: "Live Classes Conducted" }
+        ];
+
+        const faqs = [
+            {
+                q: "Who can enroll in ILMWALA HUB programs?",
+                a: "Our programs are open to students preparing for IGCSE/O Levels, IELTS, and other courses offered by ILMWALA HUB. Each program has its own eligibility requirements, which are listed on the respective course page."
+            },
+            {
+                q: "How do the online classes work?",
+                a: "Classes are conducted live on Zoom according to a fixed schedule. Students can interact with the instructor, ask questions, and participate in discussions throughout the lesson."
+            },
+            {
+                q: "What if I miss a live class?",
+                a: "No problem. Live classes are recorded and shared with enrolled students, allowing you to catch up whenever it's convenient. This depends on your selected program."
+            },
+            {
+                q: "How do I enroll in a program?",
+                a: "Simply contact us on WhatsApp using the 'Enroll Now' button. Our team will guide you through registration, fee payment, and batch allocation."
+            },
+            {
+                q: "Can I contact my teacher if I have questions?",
+                a: "Yes. Students receive academic support through WhatsApp and can ask their teachers questions outside of live class sessions whenever assistance is needed."
+            },
+            {
+                q: "How are course fees paid?",
+                a: "After completing your registration, our team will provide the available payment methods and confirm your enrollment once the payment has been received."
+            }
+        ];
+
+        /* ============================================================
+           RENDER FUNCTIONS
+           ============================================================ */
+
+        function programThumb(p) {
+            return `<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice">
+    <defs><linearGradient id="grad-${p.id}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${p.thumbGradientFrom}"/><stop offset="100%" stop-color="${p.thumbGradientTo}"/>
+    </linearGradient></defs>
+    <rect width="300" height="150" fill="url(#grad-${p.id})"/>
+    <circle cx="255" cy="25" r="45" fill="#ffffff" opacity="0.08"/>
+    <circle cx="30" cy="130" r="60" fill="#ffffff" opacity="0.07"/>
+    <rect x="30" y="55" width="90" height="60" rx="10" fill="#ffffff" opacity="0.16"/>
+    <rect x="40" y="65" width="50" height="6" rx="3" fill="#ffffff" opacity="0.55"/>
+    <rect x="40" y="78" width="70" height="5" rx="2.5" fill="#ffffff" opacity="0.35"/>
+    <circle cx="230" cy="90" r="26" fill="#ffffff" opacity="0.18"/>
+    <path d="M222 78 L245 90 L222 102 Z" fill="#ffffff" opacity="0.85"/>
+  </svg>`;
+        }
+
+        function renderPrograms() {
+            const grid = document.getElementById('programsGrid');
+            grid.innerHTML = programs.map(p => `
+    <article class="p-card reveal" tabindex="0" role="button" aria-label="View details for ${p.title}" data-id="${p.id}">
+      <div class="p-thumb">${programThumb(p)}<span class="p-badge">${p.badge}</span></div>
+      <div class="p-body">
+        <h3>${p.title}</h3>
+        <p class="desc">${p.shortDesc}</p>
+        <div class="p-meta">
+          <span><i class="fa-regular fa-clock"></i> ${p.duration}</span>
+          <span><i class="fa-solid fa-bullseye"></i> ${p.suitedFor}</span>
+        </div>
+        <div class="p-foot">
+          <span class="p-price">${p.price}</span>
+          <span class="btn btn-secondary btn-sm">View Details</span>
         </div>
       </div>
-    </nav><!-- Pages Container -->
-    <div id="pages-container"><!-- HOME PAGE -->
-      <div id="home-page" class="page active fade-in"><!-- Hero Section -->
-        <section class="gradient-bg text-white py-20 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-6xl mx-auto text-center fade-in">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6" id="hero-title">Excel in Your O-Levels &amp; IGCSE</h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90" id="hero-subtitle">Join This Exclusive Online Educational
-              Platform for Cambridge Students</p><button
-              class="px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all"
-              style="background-color: #fbbf24; color: #1e40af;" id="cta-button">Start Your Journey Today</button>
-          </div>
-        </section><!-- Why Choose Us Section -->
-        <section class="py-16 px-4" style="background-color: #f8fafc;">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Why Choose ILMWALA HUB?
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #dbeafe;">
-                  <svg class="w-8 h-8" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Affordable Pricing</h3>
-                <p style="color: #64748b;">Quality education that doesn't break the bank</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #fef3c7;">
-                  <svg class="w-8 h-8" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Study Materials Provided</h3>
-                <p style="color: #64748b;">Comprehensive resources for every subject</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #dbeafe;">
-                  <svg class="w-8 h-8" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">24/7 WhatsApp Support</h3>
-                <p style="color: #64748b;">Get help anytime with our active community</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl shadow-md card-hover text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #fef3c7;">
-                  <svg class="w-8 h-8" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Young Gen Z Teachers</h3>
-                <p style="color: #64748b;">Fresh perspectives and relatable teaching methods</p>
-              </div>
-            </div>
-          </div>
-        </section><!-- Testimonials Section -->
-        <section class="py-16 px-4" style="background-color: #ffffff;">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Our Past Experience
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="bg-white p-6 rounded-xl shadow-lg border-2" style="border-color: #dbeafe;">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-3"
-                    style="background-color: rgb(30, 64, 175); color: rgb(255, 255, 255);">
-                    A
-                  </div>
-                  <div>
-                    <h4 class="font-bold" style="color: #1e40af;">Abdullah Ajmal</h4>
-                    <p class="text-sm" style="color: #64748b;">Computer Science</p>
-                  </div>
-                </div>
-                <p style="color: #475569;">"The teachers are amazing! They explain concepts in a way that's easy to
-                  understand. Got an A* in my Computer Science!"</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl shadow-lg border-2" style="border-color: #fef3c7;">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-3"
-                    style="background-color: #f59e0b;">
-                    F
-                  </div>
-                  <div>
-                    <h4 class="font-bold" style="color: #1e40af;">Fahad Shaikh</h4>
-                    <p class="text-sm" style="color: #64748b;">Mathematics Student</p>
-                  </div>
-                </div>
-                <p style="color: #475569;">"Best decision ever! The study materials are comprehensive and the WhatsApp
-                  support is super helpful."</p>
-              </div>
-              <div class="bg-white p-6 rounded-xl shadow-lg border-2" style="border-color: #dbeafe;">
-                <div class="flex items-center mb-4">
-                  <div class="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold mr-3"
-                    style="background-color: rgb(30, 64, 175); color: rgb(255, 255, 255);">
-                    A
-                  </div>
-                  <div>
-                    <h4 class="font-bold" style="color: #1e40af;">Ali Raza</h4>
-                    <p class="text-sm" style="color: #64748b;">Business Studies</p>
-                  </div>
-                </div>
-                <p style="color: #475569;">"Affordable and effective! The teachers are young and understand how students
-                  learn
-                  best. Highly recommend!"</p>
-              </div>
-            </div>
-          </div>
-        </section><!-- CTA Section -->
-        <section class="yellow-gradient py-16 px-4"
-          style="background: linear-gradient(135deg, rgb(251, 191, 36) 0%, rgb(245, 158, 11) 100%);">
-          <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #1e40af;">Ready to Excel in Your O-Levels?
-            </h2>
-            <p class="text-xl mb-8" style="color: #78350f;">Join other students achieving their academic dreams
-              with ILMWALA HUB</p><button
-              class="px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all bg-white"
-              style="color: #1e40af;">Get Started Now</button>
-          </div>
-        </section><!-- Footer -->
-        <footer class="gradient-bg text-white py-12 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 class="text-xl font-bold mb-4">ILMWALA HUB</h3>
-                <p class="opacity-90">Your gateway to O-Level &amp; IGCSE excellence through online education.</p>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li><a href="index.html#home" class="hover:underline" data-page="home">Home</a></li>
-                  <li><a href="index.html#about" class="hover:underline" data-page="about">About</a></li>
-                  <li><a href="index.html#courses" class="hover:underline" data-page="courses">Courses</a></li>
-                  <li><a href="index.html#contact" class="hover:underline" data-page="contact">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Subjects</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li>Business Studies</li>
-                  <li>Economics</li>
-                  <li>Accounting</li>
-                  <li>Computer Science</li>
-                  <li>Physics</li>
-                  <li>Chemistry</li>
-                  <li>Mathematics</li>
-                  <li>Pakistan Studies</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li id="footer-whatsapp">WhatsApp: +92 325 4553040</li>
-                  <li id="footer-email">Email: ilmwalahub@gmail.com</li>
-                </ul>
-              </div>
-            </div>
-            <div class="border-t border-white/20 pt-8 text-center opacity-75">
-              <p>© 2025 ILMWALA HUB. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div><!-- ABOUT PAGE -->
-      <div id="about-page" class="page hidden"><!-- About Header -->
-        <section class="gradient-bg text-white py-20 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-4xl mx-auto text-center fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">About ILMWALA HUB</h1>
-            <p class="text-xl opacity-90">Empowering students to achieve academic excellence through innovative online
-              education</p>
-          </div>
-        </section><!-- Our Mission -->
-        <section class="py-16 px-4" style="background-color: #f8fafc;">
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg">
-              <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color: #1e40af;" id="mission-title">Our Mission
-              </h2>
-              <p class="text-lg leading-relaxed mb-4" style="color: #475569;" id="mission-text">At ILMWALA HUB, we
-                believe that every student deserves access to quality education. Our mission is to provide affordable,
-                comprehensive, and engaging O-Level and IGCSE courses that help students excel in their academic
-                journey.</p>
-              <p class="text-lg leading-relaxed" style="color: #475569;">Through our innovative online platform using
-                Zoom and WhatsApp, we connect students with young, passionate teachers who understand modern learning
-                needs and can relate to today's generation.</p>
-            </div>
-          </div>
-        </section><!-- Timeline -->
-        <section class="py-16 px-4" style="background-color: #ffffff;">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" style="color: #1e40af;">Our Journey</h2>
-            <div class="timeline-line relative py-8">
-              <div class="mb-16 md:flex md:items-center md:justify-start">
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                  <div class="inline-block bg-white p-6 rounded-xl shadow-lg"><span
-                      class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-2"
-                      style="background-color: #dbeafe; color: #1e40af;"> November 2025</span>
-                    <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">The Beginning</h3>
-                    <p style="color: #64748b;">Founded with a vision to make quality O-Level education accessible to all
-                      Pakistani students</p>
-                  </div>
-                </div>
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full"
-                  style="background-color: #fbbf24;"></div>
-                <div class="md:w-1/2"></div>
-              </div>
-              <div class="mb-16 md:flex md:items-center md:justify-end">
-                <div class="md:w-1/2"></div>
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full"
-                  style="background-color: #3b82f6;"></div>
-                <div class="md:w-1/2 md:pl-12">
-                  <div class="inline-block bg-white p-6 rounded-xl shadow-lg"><span
-                      class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-2"
-                      style="background-color: #fef3c7; color: #f59e0b;">2026</span>
-                    <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">N/A</h3>
-                    <p style="color: #64748b;">We will love to see your journey with ILMWALA HUB</p>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-16 md:flex md:items-center md:justify-start">
-                <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                  <div class="inline-block bg-white p-6 rounded-xl shadow-lg"><span
-                      class="inline-block px-4 py-1 rounded-full text-sm font-bold mb-2"
-                      style="background-color: #dbeafe; color: #1e40af;">2027</span>
-                    <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">N/A</h3>
-                    <p style="color: #64748b;">We will love to see your journey with ILMWALA HUB</p>
-                  </div>
-                </div>
-                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full"
-                  style="background-color: #fbbf24;"></div>
-                <div class="md:w-1/2"></div>
-              </div>
-            </div>
-          </div>
-        </section><!-- Core Values -->
-        <section class="py-16 px-4" style="background-color: #f8fafc;">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Our Core Values</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #dbeafe;">
-                  <svg class="w-8 h-8" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3" style="color: #1e40af;">Excellence</h3>
-                <p style="color: #64748b;">Committed to delivering the highest quality education and helping every
-                  student achieve their best</p>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #fef3c7;">
-                  <svg class="w-8 h-8" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                    </path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3" style="color: #1e40af;">Accessibility</h3>
-                <p style="color: #64748b;">Making quality education affordable and available to students across Pakistan
-                </p>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style="background-color: #dbeafe;">
-                  <svg class="w-8 h-8" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-3" style="color: #1e40af;">Innovation</h3>
-                <p style="color: #64748b;">Using modern teaching methods and technology to create engaging learning
-                  experiences</p>
-              </div>
-            </div>
-          </div>
-        </section><!-- Our Team -->
-        <section class="py-16 px-4" style="background-color: #ffffff;">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Meet Our Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div class="text-center">
-                <div
-                  class="w-32 h-32 mx-auto mb-4 rounded-full flex items-center justify-center text-white text-4xl font-bold"
-                  style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
-                  YA
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Yahya Aamir</h3>
-                <p class="text-sm mb-2" style="color: #f59e0b;">Accounting &amp; Mathematics</p>
-                <p style="color: #64748b;">Experienced educator with 6A*/As in IGCSE</p>
-              </div>
-              <div class="text-center">
-                <div
-                  class="w-32 h-32 mx-auto mb-4 rounded-full flex items-center justify-center text-white text-4xl font-bold"
-                  style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
-                  RA
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Razman Cheema</h3>
-                <p class="text-sm mb-2" style="color: #f59e0b;"> Pakistan Studies, Business Studies,<br> Computer
-                  Science</p>
-                <p style="color: #64748b;">IGCSE/O-Levels &amp; A levels Qualified</p>
-              </div>
-              <div class="text-center">
-                <div
-                  class="w-32 h-32 mx-auto mb-4 rounded-full flex items-center justify-center text-white text-4xl font-bold"
-                  style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
-                  HR
-                </div>
-                <h3 class="text-xl font-bold mb-2" style="color: #1e40af;">Hamza Riaz</h3>
-                <p class="text-sm mb-2" style="color: #f59e0b;">Physics, Chemistry, <br> Economics</p>
-                <p style="color: #64748b;">IGCSE/O-Levels &amp; A levels Qualified</p>
-              </div>
-            </div>
-          </div>
-        </section><!-- Footer -->
-        <footer class="gradient-bg text-white py-12 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 class="text-xl font-bold mb-4">ILMWALA HUB</h3>
-                <p class="opacity-90">Your gateway to O-Level &amp; IGCSE excellence through online education.</p>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li><a href="index.html#home" class="hover:underline" data-page="home">Home</a></li>
-                  <li><a href="index.html#about" class="hover:underline" data-page="about">About</a></li>
-                  <li><a href="index.html#courses" class="hover:underline" data-page="courses">Courses</a></li>
-                  <li><a href="index.html#contact" class="hover:underline" data-page="contact">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Subjects</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li>Business Studies</li>
-                  <li>Economics</li>
-                  <li>Accounting</li>
-                  <li>Computer Science</li>
-                  <li>Physics</li>
-                  <li>Chemistry</li>
-                  <li>Mathematics</li>
-                  <li>Pakistan Studies</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li id="footer-whatsapp-about">WhatsApp: +92 325 4553040</li>
-                  <li id="footer-email-about">Email: ilmwalahub@gmail.com</li>
-                </ul>
-              </div>
-            </div>
-            <div class="border-t border-white/20 pt-8 text-center opacity-75">
-              <p>© 2025 ILMWALA HUB. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div><!-- COURSES PAGE -->
-      <div id="courses-page" class="page hidden"><!-- Courses Header -->
-        <section class="gradient-bg text-white py-20 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-4xl mx-auto text-center fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Courses</h1>
-            <p class="text-xl opacity-90">Comprehensive O-Level &amp; IGCSE crash courses designed for your success</p>
-          </div>
-        </section><!-- Subjects Section -->
-        <section class="py-16 px-4" style="background-color: #f8fafc;">
-          <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Available Subjects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Business Studies</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #dbeafe; color: #1e40af;">7115/0450</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Business Studies Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Complete syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Past papers &amp; practice</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Real-world case studies</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Computer Science</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #fef3c7; color: #f59e0b;">2210/0478</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Computer Science Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Full syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Tests &amp; mocks</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Progress records</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Mathematics</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #dbeafe; color: #1e40af;">4024/0580</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Mathematics Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">All variants covered</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Step-by-step solutions</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Regular practice tests</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Accounting</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #fef3c7; color: #f59e0b;">7707/0452</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Accounting Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">A-Z syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Financial statements etc.</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Exam style prep</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Pakistan Studies</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #dbeafe; color: #1e40af;">2059/0448</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Pakistan Studies Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">History &amp; geography</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Exam-focused content</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Maps &amp; diagrams</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Economics</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #fef3c7; color: #f59e0b;">2281/0455</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Economics Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Complete syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Easy to learn techniques</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Micro & Macro Economics</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Physics</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #dbeafe; color: #1e40af;">5054/0625</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Physics Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Complete syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Past papers &amp; practice</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Concepts refreshed</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center justify-between mb-4">
-                  <h3 class="text-2xl font-bold" style="color: #1e40af;">Chemistry</h3><span
-                    class="px-3 py-1 rounded-full text-sm font-bold"
-                    style="background-color: #fef3c7; color: #f59e0b;">5070/0620</span>
-                </div>
-                <p class="mb-4" style="color: #64748b;">IGCSE/O-LEVEL Chemistry Crash Course</p>
-                <ul class="space-y-2 mb-4">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Full syllabus coverage</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Tests &amp; mocks</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" style="color: #fbbf24;" fill="currentColor"
-                      viewBox="0 0 20 20">
-                      <path fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"></path>
-                    </svg><span style="color: #475569;">Progress records</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section><!-- Course Details -->
-        <section class="py-16 px-4" style="background-color: #ffffff;">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">What's Included</h2>
-            <div class="bg-white border-2 rounded-2xl shadow-lg p-8" style="border-color: #dbeafe;">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #dbeafe;">
-                    <svg class="w-6 h-6" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
-                      </path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Live Zoom Classes</h3>
-                    <p style="color: #64748b;">Interactive sessions with experienced teachers</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #fef3c7;">
-                    <svg class="w-6 h-6" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                      </path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Study Materials</h3>
-                    <p style="color: #64748b;">Digital library of notes and resources</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #dbeafe;">
-                    <svg class="w-6 h-6" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
-                      </path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Past Papers</h3>
-                    <p style="color: #64748b;">Extensive collection with marking schemes</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #fef3c7;">
-                    <svg class="w-6 h-6" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                      </path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">WhatsApp Groups</h3>
-                    <p style="color: #64748b;">24/7 support and active community</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #dbeafe;">
-                    <svg class="w-6 h-6" style="color: #1e40af;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
-                      </path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Regular Assessments</h3>
-                    <p style="color: #64748b;">Exam style tests and mock exams</p>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                    style="background-color: #fef3c7;">
-                    <svg class="w-6 h-6" style="color: #f59e0b;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Convenient Timings</h3>
-                    <p style="color: #64748b;">Classes scheduled in a manageable way for you</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section><!-- Footer -->
-        <footer class="gradient-bg text-white py-12 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 class="text-xl font-bold mb-4">ILMWALA HUB</h3>
-                <p class="opacity-90">Your gateway to O-Level &amp; IGCSE excellence through online education.</p>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li><a href="index.html#home" class="hover:underline" data-page="home">Home</a></li>
-                  <li><a href="index.html#about" class="hover:underline" data-page="about">About</a></li>
-                  <li><a href="index.html#courses" class="hover:underline" data-page="courses">Courses</a></li>
-                  <li><a href="index.html#contact" class="hover:underline" data-page="contact">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Subjects</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li>Business Studies</li>
-                  <li>Economics</li>
-                  <li>Accounting</li>
-                  <li>Computer Science</li>
-                  <li>Physics</li>
-                  <li>Chemistry</li>
-                  <li>Mathematics</li>
-                  <li>Pakistan Studies</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li id="footer-whatsapp-courses">WhatsApp: +92 325 4553040</li>
-                  <li id="footer-email-courses">Email: ilmwalahub@gmail.com</li>
-                </ul>
-              </div>
-            </div>
-            <div class="border-t border-white/20 pt-8 text-center opacity-75">
-              <p>© 2025 ILMWALA HUB. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-      </div><!-- CONTACT PAGE -->
-      <div id="contact-page" class="page hidden"><!-- Contact Header -->
-        <section class="gradient-bg text-white py-20 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-4xl mx-auto text-center fade-in">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h1>
-            <p class="text-xl opacity-90">Have questions? We're here to help you succeed</p>
-          </div>
-        </section><!-- FAQs Section -->
-        <section class="py-16 px-4" style="background-color: #f8fafc;">
-          <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #1e40af;">Frequently Asked
-              Questions</h2>
-            <div class="space-y-4">
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">How do I enroll in courses?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>Contact us via WhatsApp, social media or email with your subject preferences. We'll guide you
-                    through the
-                    enrollment process, share payment details, and add you to the relevant WhatsApp groups and Zoom
-                    classes.</p>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">What are the class timings?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>We offer convenient class timings to accommodate student's schedules. Classes are typically held in
-                    the evening timings. Specific timings will be shared when you enroll based on your subject
-                    selection.</p>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">What platforms do you use for teaching?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>We conduct live interactive classes via Zoom. All communication, support, study materials, and
-                    community engagement happens through WhatsApp groups. You'll need both apps installed on your
-                    device.</p>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">Are recorded sessions available?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>Yes! All Zoom sessions are recorded and shared in our drive so you can review them
-                    anytime. This ensures you never miss important content even if you can't attend a live session.</p>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">What payment methods do you accept?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>We accept bank transfers, JazzCash, EasyPaisa, and other mobile payment methods. Detailed payment
-                    instructions will be provided during enrollment. We offer affordable monthly packages for each
-                    subject.</p>
-                </div>
-              </div>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden"><button
-                  class="faq-btn w-full text-left p-6 flex items-center justify-between" style="color: #1e40af;"> <span
-                    class="font-bold text-lg">Can I take multiple subjects?</span>
-                  <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg></button>
-                <div class="faq-content hidden px-6 pb-6" style="color: #64748b;">
-                  <p>Absolutely! Most students enroll in multiple subjects. We offer package deals for students taking 3
-                    or more subjects. Contact us to learn about our special multi-subject pricing.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section><!-- Contact Links & Form Section -->
-        <section class="py-16 px-4" style="background-color: #ffffff;">
-          <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12"><!-- Contact Info -->
-              <div>
-                <h2 class="text-3xl font-bold mb-8" style="color: #1e40af;">Contact Information</h2>
-                <div class="space-y-6">
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                      style="background-color: #dcfce7;">
-                      <svg class="w-6 h-6" style="color: #16a34a;" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">WhatsApp</h3>
-                      <p class="mb-2" style="color: #64748b;">24/7 Support Available</p><a
-                        href="https://wa.me/923254553040" target="_blank" rel="noopener noreferrer"
-                        class="font-semibold hover:underline" style="color: #16a34a;" id="contact-whatsapp">+92 325
-                        4553040</a>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                      style="background-color: #dbeafe;">
-                      <svg class="w-6 h-6" style="color: #1e40af;" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                        </path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Email</h3>
-                      <p class="mb-2" style="color: #64748b;">We'll respond within 24 hours</p><a
-                        href="mailto:ilmwalahub@gmail.com" class="font-semibold hover:underline" style="color: #1e40af;"
-                        id="contact-email">ilmwalahub@gmail.com</a>
-                    </div>
-                  </div>
-                  <div class="flex items-start">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                      style="background-color: #fef3c7;">
-                      <svg class="w-6 h-6" style="color: #f59e0b;" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 class="font-bold text-lg mb-1" style="color: #1e40af;">Working Hours</h3>
-                      <p style="color: #64748b;">Monday - Sunday</p>
-                      <p style="color: #64748b;">24/7 available</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="mt-8 p-6 rounded-xl" style="background-color: #f0f9ff;">
-                  <p class="text-sm" style="color: #1e40af;"><strong>Note:</strong> ILMWALA HUB operates entirely online
-                    through Zoom and WhatsApp. We do not have a physical location. All classes and support are provided
-                    remotely.</p>
-                </div>
-              </div><!-- Contact Form -->
-              <div>
-                <h2 class="text-3xl font-bold mb-8" style="color: #1e40af;">Send Us a Message</h2>
-                <form id="contact-form" class="space-y-6">
-                  <div><label for="name" class="block font-semibold mb-2" style="color: #1e40af;">Your Name</label>
-                    <input type="text" id="name" name="name" required=""
-                      class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                      style="border-color: #e2e8f0;" placeholder="Enter your full name">
-                  </div>
-                  <div><label for="email" class="block font-semibold mb-2" style="color: #1e40af;">Email Address</label>
-                    <input type="email" id="email" name="email" required=""
-                      class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                      style="border-color: #e2e8f0;" placeholder="youremail@example.com">
-                  </div>
-                  <div><label for="subject" class="block font-semibold mb-2" style="color: #1e40af;">Subject</label>
-                    <select id="subject" name="subject" required=""
-                      class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-                      style="border-color: #e2e8f0;">
-                      <option value="">Select a subject</option>
-                      <option value="enrollment">Enrollment Inquiry</option>
-                      <option value="course-info">Course Information</option>
-                      <option value="payment">Payment &amp; Pricing</option>
-                      <option value="technical">Technical Support</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div><label for="message" class="block font-semibold mb-2" style="color: #1e40af;">Message</label>
-                    <textarea id="message" name="message" required="" rows="5"
-                      class="w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                      style="border-color: #e2e8f0;" placeholder="Tell us how we can help you..."></textarea>
-                  </div><button type="submit"
-                    class="w-full py-4 rounded-lg font-bold text-white shadow-lg hover:shadow-xl transition-all"
-                    style="background-color: rgb(30, 64, 175); color: rgb(255, 255, 255);"> Send Message </button>
-                  <div id="form-message" class="hidden p-4 rounded-lg text-center font-semibold"></div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section><!-- Footer -->
-        <footer class="gradient-bg text-white py-12 px-4"
-          style="background: linear-gradient(135deg, rgb(30, 64, 175) 0%, rgb(59, 130, 246) 100%);">
-          <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-              <div>
-                <h3 class="text-xl font-bold mb-4">ILMWALA HUB</h3>
-                <p class="opacity-90">Your gateway to O-Level &amp; IGCSE excellence through online education.</p>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li><a href="index.html#home" class="hover:underline" data-page="home">Home</a></li>
-                  <li><a href="index.html#about" class="hover:underline" data-page="about">About</a></li>
-                  <li><a href="index.html#courses" class="hover:underline" data-page="courses">Courses</a></li>
-                  <li><a href="index.html#contact" class="hover:underline" data-page="contact">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Subjects</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li>Business Studies</li>
-                  <li>Economics</li>
-                  <li>Accounting</li>
-                  <li>Computer Science</li>
-                  <li>Physics</li>
-                  <li>Chemistry</li>
-                  <li>Mathematics</li>
-                  <li>Pakistan Studies</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-bold mb-4">Contact</h4>
-                <ul class="space-y-2 opacity-90">
-                  <li id="footer-whatsapp-contact">WhatsApp: +92 325 4553040</li>
-                  <li id="footer-email-contact">Email: ilmwalahub@gmail.com</li>
-                </ul>
-              </div>
-            </div>
-            <div class="border-t border-white/20 pt-8 text-center opacity-75">
-              <p>© 2025 ILMWALA HUB. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+    </article>
+  `).join('');
+
+            grid.querySelectorAll('.p-card').forEach(card => {
+                const open = () => openProgramModal(card.dataset.id);
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+            });
+
+            // footer links
+            document.getElementById('footerPrograms').innerHTML = programs.map(p => `<li><a href="#programs" data-id="${p.id}" class="footer-prog-link">${p.title}</a></li>`).join('');
+            document.querySelectorAll('.footer-prog-link').forEach(a => {
+                a.addEventListener('click', e => { e.preventDefault(); document.getElementById('programs').scrollIntoView({ behavior: 'smooth' }); setTimeout(() => openProgramModal(a.dataset.id), 450); });
+            });
+        }
+
+        function renderWhy() {
+            document.getElementById('whyGrid').innerHTML = whyItems.map(w => `
+    <div class="why-card reveal">
+      <div class="why-icon">${w.icon}</div>
+      <h4>${w.title}</h4>
+      <p>${w.text}</p>
+    </div>
+  `).join('');
+        }
+
+        function renderProcess() {
+            document.getElementById('processTrack').innerHTML = processSteps.map((s, i) => `
+    <div class="proc-step reveal">
+      <div class="proc-num">${i + 1}</div>
+      <h4>${s.title}</h4>
+      <p>${s.text}</p>
+    </div>
+  `).join('');
+        }
+
+        function renderTeachers() {
+            document.getElementById('teachersGrid').innerHTML = teachers.map(t => `
+    <div class="t-card reveal">
+      <div class="t-avatar" style="background:linear-gradient(135deg,${t.from},${t.to});">${t.initials}</div>
+      <h4>${t.name}</h4>
+      <div class="t-role">${t.role}</div>
+      <p class="t-bio">${t.bio}</p>
+      <span class="t-exp">${t.exp}</span>
+    </div>
+  `).join('');
+        }
+
+        let testiIndex = 0;
+        function renderTestimonials() {
+            const slides = document.getElementById('testiSlides');
+            slides.innerHTML = testimonials.map(t => `
+    <div class="t-slide">
+      <div class="t-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+      <p class="t-quote">"${t.quote}"</p>
+      <div class="t-person">
+        <div class="t-p-avatar" style="background:linear-gradient(135deg,${t.from},${t.to});">${t.initials}</div>
+        <div><div class="t-p-name">${t.name}</div><div class="t-p-prog">${t.program}</div></div>
       </div>
     </div>
-  </div>
-  <script>
-    // Configuration
-    const defaultConfig = {
-      site_title: "ILMWALA HUB",
-      tagline: "Your Gateway to O-Level Excellence",
-      hero_title: "Excel in Your O-Levels & IGCSE",
-      hero_subtitle: "Join Pakistan's Leading Online Educational Platform for Cambridge Students",
-      cta_button: "Start Your Journey Today",
-      mission_title: "Our Mission",
-      mission_text: "At ILMWALA HUB, we believe that every student deserves access to quality education. Our mission is to provide affordable, comprehensive, and engaging O-Level and IGCSE courses that help students excel in their academic journey.",
-      whatsapp_number: "+923254553040",
-      email_address: "ilmwalahub@gmail.com",
-      background_color: "#1e40af",
-      secondary_color: "#3b82f6",
-      accent_color: "#fbbf24",
-      text_color: "#1e40af",
-      surface_color: "#ffffff",
-      font_family: "system-ui",
-      font_size: 16
-    };
-
-    // Element SDK initialization
-    async function onConfigChange(config) {
-      // Update navigation title
-      const navTitle = document.getElementById('nav-title');
-      if (navTitle) {
-        navTitle.textContent = config.site_title || defaultConfig.site_title;
-      }
-
-      // Update hero section
-      const heroTitle = document.getElementById('hero-title');
-      if (heroTitle) {
-        heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
-      }
-
-      const heroSubtitle = document.getElementById('hero-subtitle');
-      if (heroSubtitle) {
-        heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
-      }
-
-      const ctaButton = document.getElementById('cta-button');
-      if (ctaButton) {
-        ctaButton.textContent = config.cta_button || defaultConfig.cta_button;
-      }
-
-      // Update mission section
-      const missionTitle = document.getElementById('mission-title');
-      if (missionTitle) {
-        missionTitle.textContent = config.mission_title || defaultConfig.mission_title;
-      }
-
-      const missionText = document.getElementById('mission-text');
-      if (missionText) {
-        missionText.textContent = config.mission_text || defaultConfig.mission_text;
-      }
-
-      // Update contact information
-      const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
-      const emailAddress = config.email_address || defaultConfig.email_address;
-
-      const whatsappElements = [
-        document.getElementById('footer-whatsapp'),
-        document.getElementById('footer-whatsapp-about'),
-        document.getElementById('footer-whatsapp-courses'),
-        document.getElementById('footer-whatsapp-contact'),
-        document.getElementById('contact-whatsapp')
-      ];
-
-      whatsappElements.forEach(el => {
-        if (el) {
-          if (el.tagName === 'A') {
-            el.textContent = whatsappNumber;
-            el.href = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`;
-          } else {
-            el.textContent = `WhatsApp: ${whatsappNumber}`;
-          }
+  `).join('');
+            const dots = document.getElementById('testiDots');
+            dots.innerHTML = testimonials.map((_, i) => `<button class="testi-dot ${i === 0 ? 'active' : ''}" data-i="${i}" aria-label="Go to testimonial ${i + 1}"></button>`).join('');
+            dots.querySelectorAll('.testi-dot').forEach(d => d.addEventListener('click', () => goToTesti(parseInt(d.dataset.i))));
         }
-      });
-
-      const emailElements = [
-        document.getElementById('footer-email'),
-        document.getElementById('footer-email-about'),
-        document.getElementById('footer-email-courses'),
-        document.getElementById('footer-email-contact'),
-        document.getElementById('contact-email')
-      ];
-
-      emailElements.forEach(el => {
-        if (el) {
-          if (el.tagName === 'A') {
-            el.textContent = emailAddress;
-            el.href = `mailto:${emailAddress}`;
-          } else {
-            el.textContent = `Email: ${emailAddress}`;
-          }
+        function goToTesti(i) {
+            testiIndex = (i + testimonials.length) % testimonials.length;
+            document.getElementById('testiSlides').style.transform = `translateX(-${testiIndex * 100}%)`;
+            document.querySelectorAll('.testi-dot').forEach((d, idx) => d.classList.toggle('active', idx === testiIndex));
         }
-      });
 
-      // Apply colors
-      const bgColor = config.background_color || defaultConfig.background_color;
-      const accentColor = config.accent_color || defaultConfig.accent_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-
-      // Update gradient backgrounds
-      const gradientBgs = document.querySelectorAll('.gradient-bg');
-      gradientBgs.forEach(el => {
-        el.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${config.secondary_color || defaultConfig.secondary_color} 100%)`;
-      });
-
-      // Update yellow gradients
-      const yellowGradients = document.querySelectorAll('.yellow-gradient');
-      yellowGradients.forEach(el => {
-        el.style.background = `linear-gradient(135deg, ${accentColor} 0%, #f59e0b 100%)`;
-      });
-
-      // Update text colors
-      document.querySelectorAll('[style*="color: #1e40af"]').forEach(el => {
-        el.style.color = textColor;
-      });
-
-      // Apply font
-      const fontFamily = config.font_family || defaultConfig.font_family;
-      const fontSize = config.font_size || defaultConfig.font_size;
-
-      document.body.style.fontFamily = `${fontFamily}, system-ui, -apple-system, sans-serif`;
-      document.body.style.fontSize = `${fontSize}px`;
-    }
-
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ accent_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
+        function renderStats() {
+            document.getElementById('statsGrid').innerHTML = stats.map(s => `
+    <div class="stat-item reveal">
+      <div class="stat-num" data-target="${s.num}">0</div>
+      <div class="stat-label">${s.label}</div>
+    </div>
+  `).join('');
         }
-      };
-    }
 
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ['site_title', config.site_title || defaultConfig.site_title],
-        ['tagline', config.tagline || defaultConfig.tagline],
-        ['hero_title', config.hero_title || defaultConfig.hero_title],
-        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-        ['cta_button', config.cta_button || defaultConfig.cta_button],
-        ['mission_title', config.mission_title || defaultConfig.mission_title],
-        ['mission_text', config.mission_text || defaultConfig.mission_text],
-        ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number],
-        ['email_address', config.email_address || defaultConfig.email_address]
-      ]);
-    }
-
-    // Initialize SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-
-    // Page Navigation
-    const pages = {
-      home: document.getElementById('home-page'),
-      about: document.getElementById('about-page'),
-      courses: document.getElementById('courses-page'),
-      contact: document.getElementById('contact-page')
-    };
-
-    function showPage(pageName) {
-      Object.keys(pages).forEach(key => {
-        if (pages[key]) {
-          pages[key].classList.add('hidden');
-          pages[key].classList.remove('fade-in');
+        function renderFaq() {
+            document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+    <div class="faq-item reveal" data-i="${i}">
+      <button class="faq-q" aria-expanded="false">
+        <span>${f.q}</span><span class="plus">+</span>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+    </div>
+  `).join('');
+            document.querySelectorAll('.faq-q').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const answer = item.querySelector('.faq-a');
+                    const isOpen = item.classList.contains('open');
+                    // close siblings within same list
+                    item.parentElement.querySelectorAll('.faq-item.open').forEach(o => {
+                        if (o !== item) { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; o.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); }
+                    });
+                    item.classList.toggle('open', !isOpen);
+                    btn.setAttribute('aria-expanded', String(!isOpen));
+                    answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : null;
+                });
+            });
         }
-      });
 
-      if (pages[pageName]) {
-        pages[pageName].classList.remove('hidden');
-        pages[pageName].classList.add('fade-in');
-        window.scrollTo(0, 0);
-      }
+        /* ---------------- Program Detail Modal ---------------- */
+        const overlay = document.getElementById('modalOverlay');
+        const modalCard = document.getElementById('modalCard');
 
-      // Update active nav links
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.dataset.page === pageName) {
-          link.classList.add('active');
+        function openProgramModal(id) {
+            const p = programs.find(x => x.id === id);
+            if (!p) return;
+            modalCard.innerHTML = `
+    <div class="modal-hero" style="background:linear-gradient(120deg,${p.thumbGradientFrom},${p.thumbGradientTo});">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <span class="m-badge">${p.badge}</span>
+      <h2>${p.title}</h2>
+      <p>${p.overview}</p>
+    </div>
+    <div class="modal-body">
+      <div class="m-quickfacts">
+        <div class="qf-item"><div class="qf-label">Duration</div><div class="qf-val">${p.duration}</div></div>
+        <div class="qf-item"><div class="qf-label">Suitable For</div><div class="qf-val">${p.suitedFor}</div></div>
+        <div class="qf-item"><div class="qf-label">Learning Mode</div><div class="qf-val">${p.mode}</div></div>
+        <div class="qf-item"><div class="qf-label">Schedule</div><div class="qf-val">${p.schedule}</div></div>
+      </div>
+ 
+      <div class="m-section">
+        <h4>Subjects / Modules Included</h4>
+        <div class="chip-row">${p.subjects.map(s => `<span class="chip">${s}</span>`).join('')}</div>
+      </div>
+ 
+      <div class="m-section">
+        <h4>Learning Outcomes</h4>
+        <ul class="m-list">${p.outcomes.map(o => `<li>${o}</li>`).join('')}</ul>
+      </div>
+ 
+      <div class="m-section">
+        <h4>Instructors</h4>
+        <div class="chip-row">${p.instructors.map(i => `<span class="chip">${i}</span>`).join('')}</div>
+      </div>
+ 
+      <div class="m-section">
+        <h4>Prerequisites</h4>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">${p.prerequisites}</p>
+      </div>
+ 
+      <div class="m-section m-faq">
+        <h4>Program FAQ</h4>
+        <div class="faq-list">
+          ${p.faqs.map((f, i) => `
+            <div class="faq-item" data-i="${i}">
+              <button class="faq-q" aria-expanded="false"><span>${f.q}</span><span class="plus">+</span></button>
+              <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
+            </div>`).join('')}
+        </div>
+      </div>
+ 
+      <div class="modal-foot">
+        <div class="price-tag">${p.price}<span>Assignments, tests &amp; progress tracking included</span></div>
+        <a href="#contact" class="btn btn-primary" id="modalEnroll">Enroll Now</a>
+      </div>
+    </div>
+  `;
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            document.getElementById('modalClose').addEventListener('click', closeModal);
+            document.getElementById('modalEnroll').addEventListener('click', closeModal);
+            modalCard.querySelectorAll('.faq-q').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const answer = item.querySelector('.faq-a');
+                    const isOpen = item.classList.contains('open');
+                    item.parentElement.querySelectorAll('.faq-item.open').forEach(o => {
+                        if (o !== item) { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; }
+                    });
+                    item.classList.toggle('open', !isOpen);
+                    answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : null;
+                });
+            });
         }
-      });
+        function closeModal() {
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-      // Close mobile menu
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenu) {
-        mobileMenu.classList.add('hidden');
-      }
-    }
+        /* ---------------- Nav scroll + mobile menu ---------------- */
+        const navEl = document.getElementById('nav');
+        window.addEventListener('scroll', () => { navEl.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
 
-    // Navigation links
-    document.querySelectorAll('a[data-page]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const page = link.dataset.page;
-        showPage(page);
-      });
-    });
+        const mobilePanel = document.getElementById('mobilePanel');
+        document.getElementById('burgerBtn').addEventListener('click', () => mobilePanel.classList.add('open'));
+        document.getElementById('mpClose').addEventListener('click', () => mobilePanel.classList.remove('open'));
+        mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobilePanel.classList.remove('open')));
 
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+        /* ---------------- Testimonial arrows ---------------- */
+        document.getElementById('testiNext').addEventListener('click', () => goToTesti(testiIndex + 1));
+        document.getElementById('testiPrev').addEventListener('click', () => goToTesti(testiIndex - 1));
+        let testiAuto = setInterval(() => goToTesti(testiIndex + 1), 6000);
+        document.querySelector('.testi-wrap')?.addEventListener('mouseenter', () => clearInterval(testiAuto));
+        document.querySelector('.testi-wrap')?.addEventListener('mouseleave', () => testiAuto = setInterval(() => goToTesti(testiIndex + 1), 6000));
 
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+        /* ---------------- Scroll reveal ---------------- */
+        function initReveal() {
+            const els = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+            }, { threshold: 0.12 });
+            els.forEach(el => io.observe(el));
+        }
 
-    // FAQ Toggle
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector('svg');
+        /* ---------------- Animated stat counters ---------------- */
+        function animateCounters() {
+            const nums = document.querySelectorAll('.stat-num');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(en => {
+                    if (en.isIntersecting) {
+                        const el = en.target;
+                        const target = el.dataset.target;
+                        const numMatch = target.match(/[\d,.]+/)[0];
+                        const suffix = target.replace(numMatch, '');
+                        const endNum = parseFloat(numMatch.replace(/,/g, ''));
+                        const duration = 1400;
+                        const start = performance.now();
+                        function tick(now) {
+                            const p = Math.min((now - start) / duration, 1);
+                            const eased = 1 - Math.pow(1 - p, 3);
+                            const val = endNum * eased;
+                            const display = numMatch.includes('.') ? val.toFixed(1) : Math.round(val).toLocaleString();
+                            el.textContent = display + suffix;
+                            if (p < 1) requestAnimationFrame(tick);
+                        }
+                        requestAnimationFrame(tick);
+                        io.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.4 });
+            nums.forEach(el => io.observe(el));
+        }
 
-        content.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
-      });
-    });
+        /* ---------------- Forms (front-end only) ---------------- */
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
+            const name = document.getElementById('cf-name').value.trim();
+            const phone = document.getElementById('cf-phone').value.trim();
+            const email = document.getElementById('cf-email').value.trim();
+            const program = document.getElementById('cf-program').value;
+            const message = document.getElementById('cf-msg').value.trim();
 
-    // Contact Form
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
+            const whatsappMessage =
+                `Hello ILMWALA HUB!
 
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+I would like to inquire about one of your programs.
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value.trim();
+*Full Name:* ${name}
+*Phone / WhatsApp:* ${phone}
+*Email:* ${email}
+*Program of Interest:* ${program}
 
-        const yourGmail = "ilmwalahub@gmail.com"; // ✅ already in your config
+*Message:*
+${message}`;
 
-        const emailSubject = encodeURIComponent(`Contact Form: ${subject}`);
-        const emailBody = encodeURIComponent(
-          `Name: ${name}\n` +
-          `Email: ${email}\n\n` +
-          `Message:\n${message}`
-        );
+            const whatsappURL =
+                `https://wa.me/923254553040?text=${encodeURIComponent(whatsappMessage)}`;
 
-        const gmailURL =
-          `https://mail.google.com/mail/?view=cm&fs=1` +
-          `&to=${yourGmail}` +
-          `&su=${emailSubject}` +
-          `&body=${emailBody}`;
+            window.open(whatsappURL, '_blank');
 
-        // Redirect instead of popup (avoids blockers)
-        window.location.href = gmailURL;
-
-        formMessage.textContent = 'Redirecting you to Gmail with your message ready…';
-        formMessage.style.backgroundColor = '#e0f2fe';
-        formMessage.style.color = '#1e40af';
-        formMessage.classList.remove('hidden');
-      });
-    }
-
-
-    // CTA Buttons
-    document.querySelectorAll('button').forEach(btn => {
-      if (btn.textContent.includes('Start') || btn.textContent.includes('Get Started')) {
-        btn.addEventListener('click', () => {
-          showPage('contact');
+            this.reset();
         });
-      }
-    });
 
-    // Initialize with home page
-    showPage('home');
-  </script>
-  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ae9f6d0f34c34e9',t:'MTc2NTg0Mzg5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+        /* ---------------- Init ---------------- */
+        document.getElementById('year').textContent = new Date().getFullYear();
+        renderPrograms();
+        renderWhy();
+        renderProcess();
+        renderTeachers();
+        renderTestimonials();
+        renderStats();
+        renderFaq();
+        initReveal();
+        animateCounters();
+    </script>
 </body>
 
 </html>
