@@ -184,41 +184,49 @@ content="https://ilmwalahub.github.io/public/images/og-image.png">
                 </div>
             </div>
             <div class="hero-visual">
-                    <img class="hero-illustration" viewBox="0 0 520 460" src="/public/images/hero.png" alt="Ilmwala Hub hero image">
-                    <defs>
-                        <linearGradient id="gBlob" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#D6B9FC" />
-                            <stop offset="100%" stop-color="#838CE5" />
-                        </linearGradient>
-                        <linearGradient id="gScreen" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#50207A" />
-                            <stop offset="100%" stop-color="#6b2f9e" />
-                        </linearGradient>
-                        <linearGradient id="gCard" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0%" stop-color="#838CE5" />
-                            <stop offset="100%" stop-color="#50207A" />
-                        </linearGradient>
-                    </defs>
-                    <ellipse cx="260" cy="240" rx="230" ry="210" fill="url(#gBlob)" opacity="0.28" />
-                    <!-- laptop -->
-                    <rect x="120" y="130" width="280" height="180" rx="18" fill="url(#gScreen)" />
-                    <rect x="140" y="150" width="240" height="140" rx="8" fill="#fff" opacity="0.08" />
-                    <rect x="150" y="162" width="90" height="10" rx="5" fill="#D6B9FC" />
-                    <rect x="150" y="182" width="150" height="8" rx="4" fill="#ffffff" opacity="0.5" />
-                    <rect x="150" y="198" width="120" height="8" rx="4" fill="#ffffff" opacity="0.35" />
-                    <circle cx="320" cy="240" r="34" fill="#D6B9FC" opacity="0.9" />
-                    <path d="M310 224 L340 240 L310 256 Z" fill="#50207A" />
-                    <rect x="95" y="310" width="330" height="18" rx="9" fill="url(#gScreen)" />
-                    <rect x="70" y="322" width="380" height="10" rx="5" fill="#3a1759" opacity="0.5" />
-                    <!-- student figure -->
-                    <circle cx="180" cy="365" r="22" fill="#F5B942" />
-                    <rect x="150" y="388" width="60" height="46" rx="16" fill="#50207A" />
-                    <!-- floating shapes -->
-                    <circle cx="430" cy="120" r="10" fill="#838CE5" />
-                    <circle cx="70" cy="90" r="7" fill="#D6B9FC" />
-                    <rect x="410" y="330" width="26" height="26" rx="8" fill="#838CE5" opacity="0.8" />
-                    <path d="M60 220 l14 14 -14 14 -14 -14 z" fill="#D6B9FC" />
-                </svg>
+                    <svg class="hero-illustration" viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gBlob" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#D6B9FC" />
+            <stop offset="100%" stop-color="#838CE5" />
+        </linearGradient>
+        <linearGradient id="gScreen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#50207A" />
+            <stop offset="100%" stop-color="#6b2f9e" />
+        </linearGradient>
+        <linearGradient id="gCard" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#838CE5" />
+            <stop offset="100%" stop-color="#50207A" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Blob -->
+    <ellipse cx="260" cy="240" rx="230" ry="210" fill="url(#gBlob)" opacity="0.28" />
+
+    <!-- Your PNG Image placed inside the SVG coordinate space -->
+    <image href="/public/images/hero.png" x="0" y="0" width="520" height="460" preserveAspectRatio="xMidYMid slice" />
+
+    <!-- laptop -->
+    <rect x="120" y="130" width="280" height="180" rx="18" fill="url(#gScreen)" />
+    <rect x="140" y="150" width="240" height="140" rx="8" fill="#fff" opacity="0.08" />
+    <rect x="150" y="162" width="90" height="10" rx="5" fill="#D6B9FC" />
+    <rect x="150" y="182" width="150" height="8" rx="4" fill="#ffffff" opacity="0.5" />
+    <rect x="150" y="198" width="120" height="8" rx="4" fill="#ffffff" opacity="0.35" />
+    <circle cx="320" cy="240" r="34" fill="#D6B9FC" opacity="0.9" />
+    <path d="M310 224 L340 240 L310 256 Z" fill="#50207A" />
+    <rect x="95" y="310" width="330" height="18" rx="9" fill="url(#gScreen)" />
+    <rect x="70" y="322" width="380" height="10" rx="5" fill="#3a1759" opacity="0.5" />
+    
+    <!-- student figure -->
+    <circle cx="180" cy="365" r="22" fill="#F5B942" />
+    <rect x="150" y="388" width="60" height="46" rx="16" fill="#50207A" />
+    
+    <!-- floating shapes -->
+    <circle cx="430" cy="120" r="10" fill="#838CE5" />
+    <circle cx="70" cy="90" r="7" fill="#D6B9FC" />
+    <rect x="410" y="330" width="26" height="26" rx="8" fill="#838CE5" opacity="0.8" />
+    <path d="M60 220 l14 14 -14 14 -14 -14 z" fill="#D6B9FC" />
+</svg>
                 <div class="float-card float-1"><span class="fc-dot">▶</span> Live Class Now</div>
                 <div class="float-card float-2"><span class="fc-dot">✓</span> Test Completed</div>
                 <div class="float-card float-3"><span class="fc-dot">★</span> 4.8 Rating</div>
